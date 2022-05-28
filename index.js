@@ -16,7 +16,6 @@ const arrayObjectPegawai = require("./data-customer.json");
 function lakukanLooping(arrPegawai) {
   // ! JANGAN DIMODIFIKASI
   let dataYangAkanDilooping = arrPegawai;
-
   /*
     TODO 1: Buatlah sebuah variabel bernama "hasilLooping" 
       yang berisi gabungan nama depan dan belakang dari masing masing pegawai
@@ -49,7 +48,23 @@ function lakukanLooping(arrPegawai) {
         "Jumlah Pria dan Wanita berimbang"
   */
   let komentar = null;
-
+  hasilLooping = [];
+  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
+    hasilLooping.push(dataYangAkanDilooping[i].namaDepan + " " + dataYangAkanDilooping[i].namaBelakang);
+    if (dataYangAkanDilooping[i].jenisKelamin === "M") {
+      jumlahPria++;
+    } else {
+      jumlahWanita++;
+    }
+  }
+  // console.log(jumlahPria, jumlahWanita);
+  if (jumlahPria > jumlahWanita) {
+    console.log("Jumlah Pria lebih banyak dari wanita");
+  } else if (jumlahPria < jumlahWanita) {
+    console.log("Jumlah Wanita lebih banyak dari pria, jadi jangan kecewa kalau jomblo :D");
+  } else {
+    console.log("Jumlah Pria dan Wanita berimbang");
+  }
   // ! JANGAN DIMODIFIKASI
   return {
     hasilLooping,
